@@ -46,7 +46,7 @@ public static void CheckForNegatives(List<int> numbers)
      List<int> negatives = numbers.FindAll(n => n < 0);
      if (negatives.Count > 0)
      {
-         throw new NegativeNumberException(negatives);
+         throw new Exception();
      }
  }
 
