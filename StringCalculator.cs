@@ -15,7 +15,7 @@ public class StringCalculator
     var SplittedList = SplitNumbersFromDelimiter(NumbersAndDelimitersTuple.Item2, NumbersAndDelimitersTuple.Item1);
     var numbersList = FilterOutNumbers(SplittedList.ToList());
     
-    CheckForNegatives(numbersList);
+    VerifyForNegativeNumber(numbersList);
     return SumOfNumbers(numbersList);
   }
 
@@ -34,7 +34,7 @@ public class StringCalculator
      return Regex.Split(numbers, delimiter);
  }
 
-private static void CheckForNegatives(List<int> numbers)
+private static void VerifyForNegativeNumber(List<int> numbers)
  {
      List<int> negatives = numbers.FindAll(n => n < 0);
      if (negatives.Count > 0)
