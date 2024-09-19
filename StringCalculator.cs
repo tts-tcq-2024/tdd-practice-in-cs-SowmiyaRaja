@@ -22,8 +22,8 @@ public class StringCalculator
     var num_list = SplitNumbers(NumbersAndDelimitersTuple.Item1, NumbersAndDelimitersTuple.Item2);
     var num_list = FilterNumbers(num_list);
     
-    CheckForNegatives(num_list)
-    return SumNumbers(num_list)
+    CheckForNegatives(num_list);
+    return SumNumbers(num_list);
   }
 
 public static Tuple<string, string> GetDelimiter(string numbers)
