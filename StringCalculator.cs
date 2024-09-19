@@ -3,13 +3,6 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-public class NegativeNumberException : Exception
-{
- public NegativeNumberException(List<int> numbers)
- {
- }
-}
-
 public class StringCalculator
 {
   public int Add(string NumbersWithDelimiters)
@@ -19,14 +12,14 @@ public class StringCalculator
       return 0;
     }
     var NumbersAndDelimitersTuple = GetDelimiter(NumbersWithDelimiters);
-    var SplittedList = SplitNumbers(NumbersAndDelimitersTuple.Item2, NumbersAndDelimitersTuple.Item1);
-    var num_list = FilterNumbers(SplittedList.ToList());
+    var SplittedList = SplitNumbersFromDelimiter(NumbersAndDelimitersTuple.Item2, NumbersAndDelimitersTuple.Item1);
+    var numbersList = FilterOutNumbers(SplittedList.ToList());
     
-    CheckForNegatives(num_list);
-    return SumNumbers(num_list);
+    CheckForNegatives(numbersList);
+    return SumOfNumbers(numbersList);
   }
 
-public static Tuple<string, string> GetDelimiter(string numbers)
+ private static Tuple<string, string> GetDelimiter(string numbers)
  {
      if (numbers.StartsWith("//"))
      {
@@ -36,12 +29,12 @@ public static Tuple<string, string> GetDelimiter(string numbers)
      return new Tuple<string, string>(",|\\n", numbers);
  }
 
- public static string[] SplitNumbers(string numbers, string delimiter)
+ private static string[] SplitNumbersFromDelimiter(string numbers, string delimiter)
  {
      return Regex.Split(numbers, delimiter);
  }
 
-public static void CheckForNegatives(List<int> numbers)
+private static void CheckForNegatives(List<int> numbers)
  {
      List<int> negatives = numbers.FindAll(n => n < 0);
      if (negatives.Count > 0)
@@ -50,12 +43,12 @@ public static void CheckForNegatives(List<int> numbers)
      }
  }
 
-public static int SumNumbers(List<int> numbers)
+private static int SumOfNumbers(List<int> numbers)
  {
      return numbers.Where(n => n <= 1000).Sum();
  }
 
- public static List<int> FilterNumbers(List<string> numList)
+ private static List<int> FilterOutNumbers(List<string> numList)
  {
      return numList.Where(n => int.TryParse(n, out _)).Select(n => int.Parse(n)).ToList();
  }
