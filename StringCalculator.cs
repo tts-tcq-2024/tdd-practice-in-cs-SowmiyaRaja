@@ -2,6 +2,9 @@ using system;
 
 public class StringCalculator
 {
-  public static 
+  public int Add(string input)
+  {
+    
+  }
   
 }
