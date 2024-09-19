@@ -28,9 +28,10 @@ public class StringCalculator
      return new Tuple<string, string>(",|\\n", numbers);
  }
 
- private static string[] SplitNumbersFromDelimiter(string numbers, string delimiter)
+ private static List<int> FilterOutNumbers(string numbers, string delimiter)
  {
-     FilterOutNumbers(Regex.Split(numbers, delimiter));
+     var numbersList = (Regex.Split(numbers, delimiter)).ToList();
+     return numList.Where(n => int.TryParse(n, out _)).Select(n => int.Parse(n)).ToList();
  }
 
 private static void VerifyForNegativeNumber(List<int> numbers)
@@ -45,10 +46,5 @@ private static void VerifyForNegativeNumber(List<int> numbers)
 private static int SumOfNumbers(List<int> numbers)
  {
      return numbers.Where(n => n <= 1000).Sum();
- }
-
- private static List<int> FilterOutNumbers(List<string> numList)
- {
-     return numList.Where(n => int.TryParse(n, out _)).Select(n => int.Parse(n)).ToList();
  }
 }
