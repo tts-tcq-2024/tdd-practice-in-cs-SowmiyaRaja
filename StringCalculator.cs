@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 public class NegativeNumberException : Exception
 {
- public NegativeNumberException(List<int> numbers) : base("Negative numbers not allowed: " + string.Join(", ", numbers))
+ public NegativeNumberException(List<int> numbers) : Exception
  {
  }
 }
