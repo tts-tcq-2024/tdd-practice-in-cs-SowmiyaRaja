@@ -19,8 +19,8 @@ public class StringCalculator
       return 0;
     }
     var NumbersAndDelimitersTuple = GetDelimiter(NumbersWithDelimiters);
-    var num_list = SplitNumbers(NumbersAndDelimitersTuple.Item1, NumbersAndDelimitersTuple.Item2);
-    num_list = FilterNumbers(num_list.ToList());
+    var SplittedList = SplitNumbers(NumbersAndDelimitersTuple.Item1, NumbersAndDelimitersTuple.Item2);
+    var num_list = FilterNumbers(SplittedList.ToList());
     
     CheckForNegatives(num_list);
     return SumNumbers(num_list);
@@ -50,7 +50,7 @@ public static void CheckForNegatives(List<int> numbers)
      }
  }
 
-public static int SumNumbers(int[] numbers)
+public static int SumNumbers(List<int> numbers)
  {
      return numbers.Where(n => n <= 1000).Sum();
  }
