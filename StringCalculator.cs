@@ -19,7 +19,7 @@ public class StringCalculator
       return 0;
     }
     var NumbersAndDelimitersTuple = GetDelimiter(NumbersWithDelimiters);
-    var SplittedList = SplitNumbers(NumbersAndDelimitersTuple.Item1, NumbersAndDelimitersTuple.Item2);
+    var SplittedList = SplitNumbers(NumbersAndDelimitersTuple.Item2, NumbersAndDelimitersTuple.Item1);
     var num_list = FilterNumbers(SplittedList.ToList());
     
     CheckForNegatives(num_list);
