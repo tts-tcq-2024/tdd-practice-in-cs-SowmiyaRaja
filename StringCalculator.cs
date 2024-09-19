@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 public class NegativeNumberException : Exception
 {
- public NegativeNumberException(List<int> numbers) : Exception
+ public NegativeNumberException(List<int> numbers) : base ("System.Exception")
  {
  }
 }
