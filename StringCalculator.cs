@@ -38,7 +38,7 @@ public static Tuple<string, string> GetDelimiter(string numbers)
 
  public static string[] SplitNumbers(string numbers, string delimiter)
  {
-     return Regex.Split(numbers, delimiter).;
+     return Regex.Split(numbers, delimiter);
  }
 
 public static void CheckForNegatives(List<int> numbers)
