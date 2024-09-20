@@ -38,17 +38,17 @@ Explanation: The sum of 1, 2 and 3 is 6.
 
 Test case 5: 
 Test case ID: TC5
-Description: 
-Input: 
-Expected Output: 
-Explanation: 
+Description: To verify the sum of numbers which begins with separate line to indicate that input has different delimiter than comma.
+Input: “//;\n1;2”
+Expected Output: 3
+Explanation: // is a separate line to indicate delimiter than comma, hence ; is a delimiter. so sum of 1 and 2 is 3
 
 Test case 6: 
 Test case ID: TC6
-Description: 
-Input: 
-Expected Output: 
-Explanation: 
+Description: To verify the negative number.
+Input: "1,-2,3"
+Expected Output: Throw an exception “negatives not allowed - 2"
+Explanation: As input has negative number, exception occured.
 
 Test case 7: 
 Test case ID: TC7
