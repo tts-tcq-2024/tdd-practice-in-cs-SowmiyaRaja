@@ -1,0 +1,61 @@
+Test specification for StringCalculator
+
+StringCalculator behaviour:
+Sum of numbers seperated by comma, newline and delimiter.
+Empty string value is zero.
+Throw an expection when negative numbers found in given input.
+Ignore Numbers bigger than 1000.
+
+Test cases:
+Test case 1: Handle Empty String
+Test case ID: TC1
+Description: To verify the empty string input value is 0.
+Input: ""
+Expected Output: 0
+Explanation: Empty string value is zero
+
+Test case 2: Handle single number
+Test case ID: TC2
+Description: To verify whether the StringCalculator returns the same digit when single number is given as input.
+Input: "1"
+Expected Output: 1
+Explanation: The given number should be returned as a sum value.
+
+Test case 3: Handle two numbers seperated by comma
+Test case ID: TC3
+Description: To verify the sum of two numbers seperated by comma.
+Input: "1,2"
+Expected Output: 3
+Explanation: The sum of 1 and 2 is 3.
+
+
+Test case 4: Handle new lines between numbers
+Test case ID: TC4
+Description: To verify the sum of numbers seperated by comma and newline.
+Input: “1\n2,3”
+Expected Output: 
+Explanation: The sum of 1, 2 and 3 is 6.
+
+Test case 5: 
+Test case ID: TC5
+Description: 
+Input: 
+Expected Output: 
+Explanation: 
+
+Test case 6: 
+Test case ID: TC6
+Description: 
+Input: 
+Expected Output: 
+Explanation: 
+
+Test case 7: 
+Test case ID: TC7
+Description: 
+Input: 
+Expected Output: 
+Explanation: 
+
+
+
