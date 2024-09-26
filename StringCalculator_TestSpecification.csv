@@ -50,12 +50,30 @@ Input: "1,-2,3"
 Expected Output: Throw an exception “negatives not allowed - 2"
 Explanation: As input has negative number, exception occured.
 
-Test case 7: 
+Test case 7: Handle invalid input.
 Test case ID: TC7
-Description: 
-Input: 
-Expected Output: 
-Explanation: 
+Description: To verify invalid input.
+Input: "1,\n"
+Expected Output: Exception with Invalid Input.
+Explanation: Exception should be thrown for invalid input
 
+Test case 8: Handle numbers bigger than 1000 should be ignored.
+Test case ID: TC8
+Description: To verify the input which has number bigger than 1000
+Input: "3,1003"
+Expected Output: 3
+Explanation: As 1003 is bigger than 1000, 1003 is ignored and only 3 is considered for sum.
 
+Test case 9: Handle input string contains only a custom delimiter and no numbers
+Test case ID: TC9
+Description: To verify the input which has new line without data
+Input: "//;\n"
+Expected Output: 0
+Explanation: 0 should be returned, if input string contains only a custom delimiter and no numbers.
 
+Test case 10: Handle input string contains a custom delimiter
+Test case ID: TC10
+Description: To verify the input which has custom delimite.
+Input: //[abc]\n3abc5abc7
+Expected Output: 15
+Explanation: sum of digits should be return, if input contains proper custom delimiter with numbers.
