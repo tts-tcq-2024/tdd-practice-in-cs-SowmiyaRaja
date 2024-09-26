@@ -1,0 +1,79 @@
+Test specification for StringCalculator
+
+StringCalculator behaviour:
+Sum of numbers seperated by comma, newline and delimiter.
+Empty string value is zero.
+Throw an expection when negative numbers found in given input.
+Ignore Numbers bigger than 1000.
+
+Test cases:
+Test case 1: Handle Empty String
+Test case ID: TC1
+Description: To verify the empty string input value is 0.
+Input: ""
+Expected Output: 0
+Explanation: Empty string value is zero
+
+Test case 2: Handle single number
+Test case ID: TC2
+Description: To verify whether the StringCalculator returns the same digit when single number is given as input.
+Input: "1"
+Expected Output: 1
+Explanation: The given number should be returned as a sum value.
+
+Test case 3: Handle two numbers seperated by comma
+Test case ID: TC3
+Description: To verify the sum of two numbers seperated by comma.
+Input: "1,2"
+Expected Output: 3
+Explanation: The sum of 1 and 2 is 3.
+
+
+Test case 4: Handle new lines between numbers
+Test case ID: TC4
+Description: To verify the sum of numbers seperated by comma and newline.
+Input: “1\n2,3”
+Expected Output: 
+Explanation: The sum of 1, 2 and 3 is 6.
+
+Test case 5: Handle input which has different delimiter than comma.
+Test case ID: TC5
+Description: To verify the sum of numbers which begins with separate line to indicate that input has different delimiter than comma.
+Input: “//;\n1;2”
+Expected Output: 3
+Explanation: // is a separate line to indicate delimiter than comma, hence ; is a delimiter. so sum of 1 and 2 is 3
+
+Test case 6: Handle input with negative number.
+Test case ID: TC6
+Description: To verify the negative number.
+Input: "1,-2,3"
+Expected Output: Throw an exception “negatives not allowed - 2"
+Explanation: As input has negative number, exception occured.
+
+Test case 7: Handle invalid input.
+Test case ID: TC7
+Description: To verify invalid input.
+Input: "1,\n"
+Expected Output: Exception with Invalid Input.
+Explanation: Exception should be thrown for invalid input
+
+Test case 8: Handle numbers bigger than 1000 should be ignored.
+Test case ID: TC8
+Description: To verify the input which has number bigger than 1000
+Input: "3,1003"
+Expected Output: 3
+Explanation: As 1003 is bigger than 1000, 1003 is ignored and only 3 is considered for sum.
+
+Test case 9: Handle input string contains only a custom delimiter and no numbers
+Test case ID: TC9
+Description: To verify the input which has new line without data
+Input: "//;\n"
+Expected Output: 0
+Explanation: 0 should be returned, if input string contains only a custom delimiter and no numbers.
+
+Test case 10: Handle input string contains a custom delimiter
+Test case ID: TC10
+Description: To verify the input which has custom delimite.
+Input: //[abc]\n3abc5abc7
+Expected Output: 15
+Explanation: sum of digits should be return, if input contains proper custom delimiter with numbers.
